@@ -25,10 +25,12 @@ requirements:
   build:
     - r-base
     - r-numderiv
+    - r-squarem
     - r-survival
   run:
     - r-base
     - r-numderiv
+    - r-squarem
     - r-survival
 
 test:
