@@ -1,4 +1,4 @@
-{% set version = '1.5.1' %}
+{% set version = "1.6.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/lava_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/lava/lava_{{ version }}.tar.gz
-  sha256: c41da42c9d90d81de876c29bfca736fa111a8924add07c85ab2f8d98200195ed
+  sha256: 33f04b315ad639e057bf7791e2536b8dc83398e3bc05083a16d38efbebb56986
 
 build:
   number: 0
@@ -25,10 +25,12 @@ requirements:
   build:
     - r-base
     - r-numderiv
+    - r-squarem
     - r-survival
   run:
     - r-base
     - r-numderiv
+    - r-squarem
     - r-survival
 
 test:
