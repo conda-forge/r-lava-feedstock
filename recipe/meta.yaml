@@ -1,4 +1,4 @@
-{% set version = "1.6.5" %}
+{% set version = '1.6.6' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lava_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lava/lava_{{ version }}.tar.gz
-  sha256: 0e7439592d9ca5a07f6a6cfad44866b9ead841a14b8cc420f9967a415ec3348f
+  sha256: 7abc84dd99cce450a45ac4f232812cde3a322e432da3472f43b057fb5c59ca59
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -22,7 +22,7 @@ build:
 
 requirements:
   build:
-
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-squarem
@@ -46,11 +46,13 @@ about:
     2SLS, and composite likelihood estimators) with both continuous, censored, and ordinal
     outcomes (Holst and Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>). Mixture
     latent variable models and non-linear latent variable models (Holst and Budtz-Joergensen
-    (2018) <arXiv:1803.06578>). The package also provides methods for graph exploration
-    (d-separation, back-door criterion), simulation of general non-linear latent variable
-    models, and estimation of influence functions for a broad range of statistical models. '
+    (2019) <doi:10.1093/biostatistics/kxy082>). The package also provides methods for
+    graph exploration (d-separation, back-door criterion), simulation of general non-linear
+    latent variable models, and estimation of influence functions for a broad range
+    of statistical models. '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
@@ -59,23 +61,23 @@ extra:
 # Package: lava
 # Type: Package
 # Title: Latent Variable Models
-# Version: 1.6.4
-# Date: 2018-11-18
+# Version: 1.6.6
+# Date: 2019-08-01
 # Authors@R: c(person("Klaus K.", "Holst", email="klaus@holst.it", role=c("aut", "cre")), person("Brice", "Ozenne", role = "ctb"), person("Thomas", "Gerds", role = "ctb"))
 # Author: Klaus K. Holst [aut, cre], Brice Ozenne [ctb], Thomas Gerds [ctb]
 # Maintainer: Klaus K. Holst <klaus@holst.it>
-# Description: A general implementation of Structural Equation Models with latent variables (MLE, 2SLS, and composite likelihood estimators) with both continuous, censored, and ordinal outcomes (Holst and Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>). Mixture latent variable models and non-linear latent variable models (Holst and Budtz-Joergensen (2018) <arXiv:1803.06578>). The package also provides methods for graph exploration (d-separation, back-door criterion), simulation of general non-linear latent variable models, and estimation of influence functions for a broad range of statistical models.
+# Description: A general implementation of Structural Equation Models with latent variables (MLE, 2SLS, and composite likelihood estimators) with both continuous, censored, and ordinal outcomes (Holst and Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>). Mixture latent variable models and non-linear latent variable models (Holst and Budtz-Joergensen (2019) <doi:10.1093/biostatistics/kxy082>). The package also provides methods for graph exploration (d-separation, back-door criterion), simulation of general non-linear latent variable models, and estimation of influence functions for a broad range of statistical models.
 # URL: https://github.com/kkholst/lava
 # BugReports: https://github.com/kkholst/lava/issues
 # License: GPL-3
 # LazyLoad: yes
 # Depends: R (>= 3.0)
 # Imports: grDevices, graphics, methods, numDeriv, stats, survival, SQUAREM, utils
-# Suggests: KernSmooth, Matrix, Rgraphviz, ascii, data.table, ellipse, fields, foreach, geepack, gof (>= 0.9), graph, igraph (>= 0.6), lava.tobit (>= 0.4.7), lme4, mets (>= 1.1), nlme, optimx, polycor, quantreg, rgl, testthat (>= 0.11), visNetwork, zoo
+# Suggests: KernSmooth, Matrix, Rgraphviz, data.table, ellipse, fields, foreach, geepack, gof (>= 0.9), graph, igraph (>= 0.6), lava.tobit (>= 0.4.7), lme4, mets (>= 1.1), nlme, optimx, polycor, quantreg, rgl, testthat (>= 0.11), visNetwork, zoo
 # ByteCompile: yes
 # Encoding: UTF-8
-# RoxygenNote: 6.1.0
+# RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2018-11-18 16:19:09 UTC; klaus
+# Packaged: 2019-08-01 21:34:45 UTC; klaus
 # Repository: CRAN
-# Date/Publication: 2018-11-25 13:00:02 UTC
+# Date/Publication: 2019-08-01 22:20:02 UTC
