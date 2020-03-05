@@ -1,4 +1,4 @@
-{% set version = '1.6.6' %}
+{% set version = "1.6.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lava_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lava/lava_{{ version }}.tar.gz
-  sha256: 7abc84dd99cce450a45ac4f232812cde3a322e432da3472f43b057fb5c59ca59
+  sha256: 63f7a8454cfc70739877812481a987deea33d4235f05234d0dd0ed8bd6eadf39
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -42,17 +42,13 @@ test:
 about:
   home: https://github.com/kkholst/lava
   license: GPL-3
-  summary: 'A general implementation of Structural Equation Models with latent variables (MLE,
-    2SLS, and composite likelihood estimators) with both continuous, censored, and ordinal
-    outcomes (Holst and Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>). Mixture
-    latent variable models and non-linear latent variable models (Holst and Budtz-Joergensen
-    (2019) <doi:10.1093/biostatistics/kxy082>). The package also provides methods for
-    graph exploration (d-separation, back-door criterion), simulation of general non-linear
-    latent variable models, and estimation of influence functions for a broad range
-    of statistical models. '
+  summary: 'A general implementation of Structural Equation Models with latent variables (MLE, 2SLS, and composite likelihood estimators) with both continuous, censored,
+    and ordinal outcomes (Holst and Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>). Mixture latent variable models and non-linear latent variable models
+    (Holst and Budtz-Joergensen (2019) <doi:10.1093/biostatistics/kxy082>). The package also provides methods for graph exploration (d-separation, back-door criterion),
+    simulation of general non-linear latent variable models, and estimation of influence functions for a broad range of statistical models. '
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
