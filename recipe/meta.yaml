@@ -1,4 +1,4 @@
-{% set version = "1.7.3" %}
+{% set version = "1.8.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lava_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lava/lava_{{ version }}.tar.gz
-  sha256: 4e087df1350b05c3d0403597a1ad97f4b0e183047d5d8636a62143f26bd86a08
+  sha256: 8db996eeca012c58736f2d3b97f569c03e9361e20f31513c090a9386eb87e87f
 
 build:
   merge_build_host: true  # [win]
