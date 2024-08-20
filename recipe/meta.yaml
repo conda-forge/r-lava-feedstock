@@ -25,6 +25,7 @@ requirements:
   host:
     - r-base
     - r-squarem
+    - r-cli
     - r-future.apply
     - r-numderiv
     - r-progressr
@@ -32,6 +33,7 @@ requirements:
   run:
     - r-base
     - r-squarem
+    - r-cli
     - r-future.apply
     - r-numderiv
     - r-progressr
