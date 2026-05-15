@@ -1,4 +1,4 @@
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lava_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lava/lava_{{ version }}.tar.gz
-  sha256: 26d18681561afde5c1674d0d66c219f14b96f0fb1df23d3af9d5bdff0ec57835
+  sha256: fd78008cdd498c1d9151e4fae3efbb221bcee156672a36fe95ab2f12bcd6f534
 
 build:
   number: 0
